@@ -764,29 +764,20 @@ public final class Type {
         System.out.println(methodDescriptor.getBytes().toString());
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
-            System.out.println("currentOffset Before: " + currentOffset);
             if (currentChar == 'J' || currentChar == 'D') {
                 currentOffset++;
                 argumentsSize += 2;
-                System.out.println("Parsed J || D");
             } else {
                 while (methodDescriptor.charAt(currentOffset) == '[') {
                     currentOffset++;
-                    System.out.println("Parsed [");
                 }
-                if (methodDescriptor.charAt(currentOffset++) == 'L') {
+                if (methodDescriptor.charAt(currentOffset) == 'L') {
                     // Skip the argument descriptor content.
-                    System.out.println("L - currentOffset: " + currentOffset);
                     int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
-                    System.out.println("L - semiColumnOffset no startFrom: " + methodDescriptor.indexOf(';'));
-                    System.out.println("L - semiColumnOffset with prevCurrentOffset: " + methodDescriptor.indexOf(';', currentOffset - 1));
-                    System.out.println("L - semiColumnOffset with currentOffset: " + methodDescriptor.indexOf(';', currentOffset));
-                    currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                    System.out.println("Parsed L");
+                    currentOffset = Math.max(currentOffset, semiColumnOffset) + 1;
                 }
                 argumentsSize += 1;
             }
-            System.out.println("currentOffset After: " + currentOffset);
             currentChar = methodDescriptor.charAt(currentOffset);
         }
         currentChar = methodDescriptor.charAt(currentOffset + 1);
