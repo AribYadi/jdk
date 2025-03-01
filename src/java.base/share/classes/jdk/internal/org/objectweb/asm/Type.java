@@ -773,7 +773,9 @@ public final class Type {
                 if (methodDescriptor.charAt(currentOffset++) == 'L') {
                     // Skip the argument descriptor content.
                     int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
+                    System.out.println("CurrentOffset: " + currentOffset);
                     currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
+                    System.out.println("CurrentOffset: " + currentOffset);
                 }
                 argumentsSize += 1;
             }
