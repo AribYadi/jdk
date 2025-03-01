@@ -761,7 +761,7 @@ public final class Type {
         int currentOffset = 1;
         int currentChar = methodDescriptor.charAt(currentOffset);
         System.out.println(methodDescriptor);
-        System.out.println(Arrays.toString(methodDescriptor.getBytes()));
+        System.out.println(methodDescriptor.getBytes().toString()));
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
             System.out.println("currentOffset Before: " + currentOffset);
