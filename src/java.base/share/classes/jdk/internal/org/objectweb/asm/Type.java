@@ -760,7 +760,7 @@ public final class Type {
         // Skip the first character, which is always a '('.
         int currentOffset = 1;
         int currentChar = methodDescriptor.charAt(currentOffset);
-        System.out.printf("%n: %c\n", currentOffset, currentChar);
+        System.out.println(methodDescriptor);
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
             if (currentChar == 'J' || currentChar == 'D') {
@@ -778,10 +778,8 @@ public final class Type {
                 argumentsSize += 1;
             }
             currentChar = methodDescriptor.charAt(currentOffset);
-            System.out.printf("%n: %c\n", currentOffset, currentChar);
         }
         currentChar = methodDescriptor.charAt(currentOffset + 1);
-        System.out.printf("%n: %c\n", currentOffset + 1, currentChar);
         if (currentChar == 'V') {
             return argumentsSize << 2;
         } else {
