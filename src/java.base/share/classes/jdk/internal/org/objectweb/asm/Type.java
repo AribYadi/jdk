@@ -763,23 +763,26 @@ public final class Type {
         System.out.println(methodDescriptor);
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
+            System.out.println("CurrentOutput Before: " + CurrentOutput);
             if (currentChar == 'J' || currentChar == 'D') {
                 currentOffset++;
                 argumentsSize += 2;
+                System.out.println("Parsed J || D");
             } else {
                 while (methodDescriptor.charAt(currentOffset) == '[') {
                     currentOffset++;
+                    System.out.println("Parsed [");
                 }
                 if (methodDescriptor.charAt(currentOffset++) == 'L') {
                     // Skip the argument descriptor content.
                     int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
-                    System.out.println("CurrentOffset: " + currentOffset);
                     currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                    System.out.println("CurrentOffset: " + currentOffset);
+                    System.out.println("Parsed L");
                 }
                 argumentsSize += 1;
             }
             currentChar = methodDescriptor.charAt(currentOffset);
+            System.out.println("CurrentOutput After: " + CurrentOutput);
         }
         currentChar = methodDescriptor.charAt(currentOffset + 1);
         if (currentChar == 'V') {
