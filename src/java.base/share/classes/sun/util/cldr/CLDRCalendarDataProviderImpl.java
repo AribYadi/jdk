@@ -101,7 +101,11 @@ public class CLDRCalendarDataProviderImpl extends CalendarDataProviderImpl {
         int regionIndex = src.indexOf(region);
         if (regionIndex >= 0) {
             int start = src.lastIndexOf(';', regionIndex) + 1;
-            return Optional.of(1); //Integer.parseInt(src, start, src.indexOf(':', start), 10));
+            try {
+                return Optional.of(Integer.parseInt(src, start, src.indexOf(':', start), 10));
+            } else {
+                return Optional.of(1);
+            }
         }
         return Optional.empty();
     }
