@@ -763,7 +763,7 @@ public final class Type {
         System.out.println(methodDescriptor);
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
-            System.out.println("CurrentOutput Before: " + CurrentOutput);
+            System.out.println("CurrentOutput Before: " + currentOutput);
             if (currentChar == 'J' || currentChar == 'D') {
                 currentOffset++;
                 argumentsSize += 2;
@@ -782,7 +782,7 @@ public final class Type {
                 argumentsSize += 1;
             }
             currentChar = methodDescriptor.charAt(currentOffset);
-            System.out.println("CurrentOutput After: " + CurrentOutput);
+            System.out.println("CurrentOutput After: " + currentOutput);
         }
         currentChar = methodDescriptor.charAt(currentOffset + 1);
         if (currentChar == 'V') {
