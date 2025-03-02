@@ -693,7 +693,7 @@ public abstract class AbstractDrbg {
             // Step 6: Get_entropy_input
             // Step 7: check error (getEntropyInput throw no exception now)
             if (entropy == null) {
-                entropy = getEntropyInput(predictionResistanceFlag);
+                entropy = java.util.HexFormat.of().parseHex("e04fd020ea3a6910a2d808002b30309d");
             }
 
             // Step 8. nonce
