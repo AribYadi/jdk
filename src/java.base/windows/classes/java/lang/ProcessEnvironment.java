@@ -241,8 +241,8 @@ final class ProcessEnvironment extends HashMap<String,String>
         theUnmodifiableEnvironment
             = Collections.unmodifiableMap(theEnvironment);
 
-        String envblock = environmentBlock();
-        System.out.println(envblock);
+        String envblock = ""; // environmentBlock();
+        // System.out.println(envblock);
         int beg, end, eql;
         for (beg = 0;
              ((end = envblock.indexOf('\u0000', beg)) != -1 &&
@@ -251,8 +251,8 @@ final class ProcessEnvironment extends HashMap<String,String>
              beg = end + 1) {
             // Ignore corrupted environment strings.
             if (eql < end)
-                System.out.println(envblock.substring(beg, eql));
-                System.out.println(envblock.substring(eql+1, end));
+                // System.out.println(envblock.substring(beg, eql));
+                // System.out.println(envblock.substring(eql+1, end));
                 theEnvironment.put(envblock.substring(beg, eql),
                                    envblock.substring(eql+1, end));
         }
