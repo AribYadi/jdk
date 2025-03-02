@@ -760,8 +760,6 @@ public final class Type {
         // Skip the first character, which is always a '('.
         int currentOffset = 1;
         int currentChar = methodDescriptor.charAt(currentOffset);
-        System.out.println(methodDescriptor);
-        System.out.println(methodDescriptor.getBytes().toString());
         // Parse the argument types and compute their size, one at a each loop iteration.
         while (currentChar != ')') {
             if (currentChar == 'J' || currentChar == 'D') {
