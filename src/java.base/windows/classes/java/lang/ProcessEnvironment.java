@@ -242,16 +242,19 @@ final class ProcessEnvironment extends HashMap<String,String>
             = Collections.unmodifiableMap(theEnvironment);
 
         String envblock = environmentBlock();
+        System.out.pritnln(envblock);
         int beg, end, eql;
         for (beg = 0;
-             ((end = envblock.indexOf('\u0000', beg+1)) != -1 &&
+             ((end = envblock.indexOf('\u0000', beg)) != -1 &&
               // An initial `=' indicates a magic Windows variable name -- OK
               (eql = envblock.indexOf('='     , beg+1)) != -1);
              beg = end + 1) {
             // Ignore corrupted environment strings.
             if (eql < end)
+                System.out.println(envblock.substring(beg, eql));
+                System.out.println(envblock.substring(eql+1, end));
                 theEnvironment.put(envblock.substring(beg, eql),
-                                   envblock.substring(eql+1,end));
+                                   envblock.substring(eql+1, end));
         }
 
         theCaseInsensitiveEnvironment = new TreeMap<>(nameComparator);
