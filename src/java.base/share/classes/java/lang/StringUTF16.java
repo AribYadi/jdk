@@ -437,7 +437,6 @@ final class StringUTF16 {
         }
     }
 
-    @IntrinsicCandidate
     public static int indexOf(byte[] value, byte[] str) {
         if (str.length == 0) {
             return 0;
@@ -448,7 +447,6 @@ final class StringUTF16 {
         return indexOfUnsafe(value, length(value), str, length(str), 0);
     }
 
-    @IntrinsicCandidate
     public static int indexOf(byte[] value, int valueCount, byte[] str, int strCount, int fromIndex) {
         checkBoundsBeginEnd(fromIndex, valueCount, value);
         checkBoundsBeginEnd(0, strCount, str);
@@ -486,7 +484,6 @@ final class StringUTF16 {
     /**
      * Handles indexOf Latin1 substring in UTF16 string.
      */
-    @IntrinsicCandidate
     public static int indexOfLatin1(byte[] value, byte[] str) {
         if (str.length == 0) {
             return 0;
@@ -497,7 +494,6 @@ final class StringUTF16 {
         return indexOfLatin1Unsafe(value, length(value), str, str.length, 0);
     }
 
-    @IntrinsicCandidate
     public static int indexOfLatin1(byte[] src, int srcCount, byte[] tgt, int tgtCount, int fromIndex) {
         checkBoundsBeginEnd(fromIndex, srcCount, src);
         String.checkBoundsBeginEnd(0, tgtCount, tgt.length);
@@ -532,7 +528,6 @@ final class StringUTF16 {
         return -1;
     }
 
-    @IntrinsicCandidate
     private static int indexOfChar(byte[] value, int ch, int fromIndex, int max) {
         checkBoundsBeginEnd(fromIndex, max, value);
         return indexOfCharUnsafe(value, ch, fromIndex, max);

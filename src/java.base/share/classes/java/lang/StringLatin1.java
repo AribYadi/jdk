@@ -213,7 +213,6 @@ final class StringLatin1 {
         return indexOfChar(value, ch, fromIndex, max);
     }
 
-    @IntrinsicCandidate
     private static int indexOfChar(byte[] value, int ch, int fromIndex, int max) {
         byte c = (byte)ch;
         for (int i = fromIndex; i < max; i++) {
@@ -224,7 +223,6 @@ final class StringLatin1 {
         return -1;
     }
 
-    @IntrinsicCandidate
     public static int indexOf(byte[] value, byte[] str) {
         if (str.length == 0) {
             return 0;
@@ -235,7 +233,6 @@ final class StringLatin1 {
         return indexOf(value, value.length, str, str.length, 0);
     }
 
-    @IntrinsicCandidate
     public static int indexOf(byte[] value, int valueCount, byte[] str, int strCount, int fromIndex) {
         byte first = str[0];
         int max = (valueCount - strCount);
