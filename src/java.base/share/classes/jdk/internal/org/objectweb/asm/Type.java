@@ -338,9 +338,7 @@ public final class Type {
                 // Skip the argument descriptor content.
                 // int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 // currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                while (methodDescriptor.charAt(currentOffset) != ';') {
-                    currentOffset++;
-                }
+                while (methodDescriptor.charAt(currentOffset++) != ';') {}
             }
             ++numArgumentTypes;
         }
@@ -360,9 +358,7 @@ public final class Type {
                 // Skip the argument descriptor content.
                 // int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 // currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                while (methodDescriptor.charAt(currentOffset) != ';') {
-                    currentOffset++;
-                }
+                while (methodDescriptor.charAt(currentOffset++) != ';') {}
             }
             argumentTypes[currentArgumentTypeIndex++] =
                     getTypeInternal(methodDescriptor, currentArgumentTypeOffset, currentOffset);
@@ -434,9 +430,7 @@ public final class Type {
                 // Skip the argument descriptor content.
                 // int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 // currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                while (methodDescriptor.charAt(currentOffset) != ';') {
-                    currentOffset++;
-                }
+                while (methodDescriptor.charAt(currentOffset++) != ';') {}
             }
         }
         return currentOffset + 1;
@@ -782,9 +776,7 @@ public final class Type {
                     // Skip the argument descriptor content.
                     // int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                     // currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                    while (methodDescriptor.charAt(currentOffset) != ';') {
-                        currentOffset++;
-                    }
+                    while (methodDescriptor.charAt(currentOffset++) != ';') {}
                 }
                 argumentsSize += 1;
             }
