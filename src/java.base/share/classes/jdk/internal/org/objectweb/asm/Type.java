@@ -771,10 +771,10 @@ public final class Type {
                 while (methodDescriptor.charAt(currentOffset) == '[') {
                     currentOffset++;
                 }
-                if (methodDescriptor.charAt(currentOffset) == 'L') {
+                if (methodDescriptor.charAt(currentOffset++) == 'L') {
                     // Skip the argument descriptor content.
-                    int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
-                    currentOffset = Math.max(currentOffset, semiColumnOffset) + 1;
+                    int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
+                    currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
                 }
                 argumentsSize += 1;
             }
