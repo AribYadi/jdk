@@ -242,7 +242,7 @@ final class ProcessEnvironment extends HashMap<String,String>
             = Collections.unmodifiableMap(theEnvironment);
 
         String envblock = environmentBlock();
-        System.out.pritnln(envblock);
+        System.out.println(envblock);
         int beg, end, eql;
         for (beg = 0;
              ((end = envblock.indexOf('\u0000', beg)) != -1 &&
