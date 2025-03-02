@@ -244,7 +244,7 @@ final class ProcessEnvironment extends HashMap<String,String>
         String envblock = environmentBlock();
         int beg, end, eql;
         for (beg = 0;
-             ((end = envblock.indexOf('\u0000', beg == 0 ? 0 : beg - 1)) != -1 &&
+             ((end = envblock.indexOf('\u0000', beg+1) != -1 &&
               // An initial `=' indicates a magic Windows variable name -- OK
               (eql = envblock.indexOf('='     , beg+1)) != -1);
              beg = end + 1) {
