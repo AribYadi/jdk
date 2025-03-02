@@ -336,7 +336,7 @@ public final class Type {
             }
             if (methodDescriptor.charAt(currentOffset++) == 'L') {
                 // Skip the argument descriptor content.
-                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
+                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
             }
             ++numArgumentTypes;
@@ -355,7 +355,7 @@ public final class Type {
             }
             if (methodDescriptor.charAt(currentOffset++) == 'L') {
                 // Skip the argument descriptor content.
-                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
+                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
             }
             argumentTypes[currentArgumentTypeIndex++] =
@@ -426,7 +426,7 @@ public final class Type {
             }
             if (methodDescriptor.charAt(currentOffset++) == 'L') {
                 // Skip the argument descriptor content.
-                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset);
+                int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
                 currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
             }
         }
@@ -772,15 +772,12 @@ public final class Type {
                 if (methodDescriptor.charAt(currentOffset++) == 'L') {
                     // Skip the argument descriptor content.
                     int semiColumnOffset = methodDescriptor.indexOf(';', currentOffset - 1);
-                    System.out.println("currentOffset before: " + currentOffset);
                     currentOffset = Math.max(currentOffset, semiColumnOffset + 1);
-                    System.out.println("currentOffset after: " + currentOffset);
                 }
                 argumentsSize += 1;
             }
             currentChar = methodDescriptor.charAt(currentOffset);
         }
-        System.out.println("- currentOffset final: " + currentOffset);
         currentChar = methodDescriptor.charAt(currentOffset + 1);
         if (currentChar == 'V') {
             return argumentsSize << 2;
