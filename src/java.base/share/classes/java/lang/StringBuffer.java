@@ -123,7 +123,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
      * Constructs a string buffer with no characters in it and an
      * initial capacity of 16 characters.
      */
-    @IntrinsicCandidate
+    
     public StringBuffer() {
         super(16);
     }
@@ -136,7 +136,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
      * @throws     NegativeArraySizeException  if the {@code capacity}
      *             argument is less than {@code 0}.
      */
-    @IntrinsicCandidate
+    
     public StringBuffer(int capacity) {
         super(capacity);
     }
@@ -148,7 +148,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
      *
      * @param   str   the initial contents of the buffer.
      */
-    @IntrinsicCandidate
+    
     public StringBuffer(String str) {
         super(str);
     }
@@ -302,7 +302,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public synchronized StringBuffer append(String str) {
         toStringCache = null;
         super.append(str);
@@ -414,7 +414,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public synchronized StringBuffer append(char c) {
         toStringCache = null;
         super.append(c);
@@ -422,7 +422,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public synchronized StringBuffer append(int i) {
         toStringCache = null;
         super.append(i);
@@ -704,7 +704,7 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public synchronized String toString() {
         if (toStringCache == null) {
             return toStringCache =

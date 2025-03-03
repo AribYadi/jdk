@@ -80,17 +80,17 @@ class CharacterDataLatin1 extends CharacterData {
         return props;
     }
 
-    @IntrinsicCandidate
+    
     boolean isDigit(int ch) {
         return '0' <= ch && ch <= '9';
     }
 
-    @IntrinsicCandidate
+    
     boolean isLowerCase(int ch) {
         return (getPropertiesEx(ch) & $$maskOtherLowercase) != 0;
     }
 
-    @IntrinsicCandidate
+    
     boolean isUpperCase(int ch) {
         return (getPropertiesEx(ch) & $$maskOtherUppercase) != 0;
     }
@@ -220,7 +220,7 @@ class CharacterDataLatin1 extends CharacterData {
         return retval;
     }
 
-    @IntrinsicCandidate
+    
     boolean isWhitespace(int ch) {
         int props = getProperties(ch);
         return ((props & $$maskIdentifierInfo) == $$valueJavaWhitespace);

@@ -134,10 +134,10 @@ public class Adler32 implements Checksum {
 
     private static native int update(int adler, int b);
 
-    @IntrinsicCandidate
+    
     private static native int updateBytes(int adler, byte[] b, int off,
                                           int len);
-    @IntrinsicCandidate
+    
     private static native int updateByteBuffer(int adler, long addr,
                                                int off, int len);
 

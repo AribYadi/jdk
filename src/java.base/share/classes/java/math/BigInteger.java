@@ -1756,7 +1756,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
         return implMultiplyToLen(x, xlen, y, ylen, z);
     }
 
-    @IntrinsicCandidate
+    
     private static int[] implMultiplyToLen(int[] x, int xlen, int[] y, int ylen, int[] z) {
         int xstart = xlen - 1;
         int ystart = ylen - 1;
@@ -2149,7 +2149,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
      /**
       * Java Runtime may use intrinsic for this method.
       */
-     @IntrinsicCandidate
+     
      private static final int[] implSquareToLen(int[] x, int len, int[] z, int zlen) {
         /*
          * The algorithm used here is adapted from Colin Plumb's C library.
@@ -2852,13 +2852,13 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
 
     // These methods are intended to be replaced by virtual machine
     // intrinsics.
-    @IntrinsicCandidate
+    
     private static int[] implMontgomeryMultiply(int[] a, int[] b, int[] n, int len,
                                          long inv, int[] product) {
         product = multiplyToLen(a, len, b, len, product);
         return montReduce(product, n, len, (int)inv);
     }
-    @IntrinsicCandidate
+    
     private static int[] implMontgomerySquare(int[] a, int[] n, int len,
                                        long inv, int[] product) {
         product = squareToLen(a, len, product);
@@ -3190,7 +3190,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
     /**
      * Java Runtime may use intrinsic for this method.
      */
-    @IntrinsicCandidate
+    
     private static int implMulAdd(int[] out, int[] in, int offset, int len, int k) {
         long kLong = k & LONG_MASK;
         long carry = 0;
@@ -3371,7 +3371,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
     }
 
     @ForceInline
-    @IntrinsicCandidate
+    
     private static void shiftLeftImplWorker(int[] newArr, int[] oldArr, int newIdx, int shiftCount, int numIter) {
         int shiftCountRight = 32 - shiftCount;
         int oldIdx = 0;
@@ -3456,7 +3456,7 @@ public class BigInteger extends Number implements Comparable<BigInteger> {
     }
 
     @ForceInline
-    @IntrinsicCandidate
+    
     private static void shiftRightImplWorker(int[] newArr, int[] oldArr, int newIdx, int shiftCount, int numIter) {
         int shiftCountLeft = 32 - shiftCount;
         int idx = numIter;

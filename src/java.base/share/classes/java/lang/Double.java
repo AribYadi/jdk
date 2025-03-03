@@ -627,7 +627,7 @@ public final class Double extends Number
      * @return a {@code Double} instance representing {@code d}.
      * @since  1.5
      */
-    @IntrinsicCandidate
+    
     public static Double valueOf(double d) {
         return new Double(d);
     }
@@ -837,7 +837,7 @@ public final class Double extends Number
      *
      * @return the {@code double} value represented by this object
      */
-    @IntrinsicCandidate
+    
     public double doubleValue() {
         return value;
     }
@@ -943,7 +943,7 @@ public final class Double extends Number
      * @param   value   a {@code double} precision floating-point number.
      * @return the bits that represent the floating-point number.
      */
-    @IntrinsicCandidate
+    
     public static long doubleToLongBits(double value) {
         if (!isNaN(value)) {
             return doubleToRawLongBits(value);
@@ -987,7 +987,7 @@ public final class Double extends Number
      * @return the bits that represent the floating-point number.
      * @since 1.3
      */
-    @IntrinsicCandidate
+    
     public static native long doubleToRawLongBits(double value);
 
     /**
@@ -1051,7 +1051,7 @@ public final class Double extends Number
      * @return  the {@code double} floating-point value with the same
      *          bit pattern.
      */
-    @IntrinsicCandidate
+    
     public static native double longBitsToDouble(long bits);
 
     /**

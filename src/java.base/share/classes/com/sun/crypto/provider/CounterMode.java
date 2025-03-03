@@ -182,7 +182,7 @@ class CounterMode extends FeedbackCipher {
     }
 
     // Implementation of crpyt() method. Possibly replaced with a compiler intrinsic.
-    @IntrinsicCandidate
+    
     private int implCrypt(byte[] in, int inOff, int len, byte[] out, int outOff) {
         int result = len;
         while (len-- > 0) {

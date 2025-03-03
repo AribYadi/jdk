@@ -108,7 +108,7 @@ public class ArraysSupport {
      * compliment of the number of remaining pairs of elements to be checked in
      * the tail of the two arrays.
      */
-    @IntrinsicCandidate
+    
     public static int vectorizedMismatch(Object a, long aOffset,
                                          Object b, long bOffset,
                                          int length,

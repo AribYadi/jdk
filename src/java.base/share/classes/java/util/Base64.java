@@ -418,7 +418,7 @@ public class Base64 {
             return new Encoder(isURL, newline, linemax, false);
         }
 
-        @IntrinsicCandidate
+        
         private void encodeBlock(byte[] src, int sp, int sl, byte[] dst, int dp, boolean isURL) {
             char[] base64 = isURL ? toBase64URL : toBase64;
             for (int sp0 = sp, dp0 = dp ; sp0 < sl; ) {
@@ -781,7 +781,7 @@ public class Base64 {
          *         boolean, when true decode RFC4648 URL-safe base64 characters
          * @return the number of destination data bytes produced
          */
-        @IntrinsicCandidate
+        
         private int decodeBlock(byte[] src, int sp, int sl, byte[] dst, int dp, boolean isURL) {
             int[] base64 = isURL ? fromBase64URL : fromBase64;
             int sl0 = sp + ((sl - sp) & ~0b11);

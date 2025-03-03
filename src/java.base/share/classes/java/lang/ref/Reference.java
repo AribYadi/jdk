@@ -348,7 +348,7 @@ public abstract class Reference<T> {
      *           {@code null} if this reference object has been cleared
      * @see #refersTo
      */
-    @IntrinsicCandidate
+    
     public T get() {
         return this.referent;
     }
@@ -368,7 +368,7 @@ public abstract class Reference<T> {
 
     /* Implementation of refersTo(), overridden for phantom references.
      */
-    @IntrinsicCandidate
+    
     native boolean refersTo0(Object o);
 
     /**

@@ -156,7 +156,7 @@ public class VectorSupport {
         VM broadcast(long l, S s);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <VM, E, S extends VectorSpecies<E>>
     VM broadcastCoerced(Class<? extends VM> vmClass, Class<E> E, int length,
@@ -171,7 +171,7 @@ public class VectorSupport {
         VectorShuffle<E> apply(int length, int start, int step, S s);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <E, S extends VectorSpecies<E>>
     VectorShuffle<E> shuffleIota(Class<?> E, Class<?> ShuffleClass, S s, int length,
@@ -184,7 +184,7 @@ public class VectorSupport {
        VM apply(Sh s);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <VM ,Sh extends VectorShuffle<E>, E>
     VM shuffleToVector(Class<?> VM, Class<?>E , Class<?> ShuffleClass, Sh s, int length,
@@ -198,7 +198,7 @@ public class VectorSupport {
         V index(V v, int step, S s);
     }
 
-    //FIXME @IntrinsicCandidate
+    //FIXME 
     public static
     <V extends Vector<E>, E, S extends VectorSpecies<E>>
     V indexVector(Class<? extends V> vClass, Class<E> E, int length,
@@ -210,7 +210,7 @@ public class VectorSupport {
 
     /* ============================================================================ */
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<?>>
     long reductionCoerced(int oprId, Class<?> vectorClass, Class<?> elementType, int length,
@@ -226,7 +226,7 @@ public class VectorSupport {
         long apply(V v1, int idx);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<?>>
     long extract(Class<?> vectorClass, Class<?> elementType, int vlen,
@@ -242,7 +242,7 @@ public class VectorSupport {
         V apply(V v1, int idx, long val);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<?>>
     V insert(Class<? extends V> vectorClass, Class<?> elementType, int vlen,
@@ -254,7 +254,7 @@ public class VectorSupport {
 
     /* ============================================================================ */
 
-    @IntrinsicCandidate
+    
     public static
     <VM>
     VM unaryOp(int oprId, Class<? extends VM> vmClass, Class<?> elementType, int length,
@@ -266,7 +266,7 @@ public class VectorSupport {
 
     /* ============================================================================ */
 
-    @IntrinsicCandidate
+    
     public static
     <VM>
     VM binaryOp(int oprId, Class<? extends VM> vmClass, Class<?> elementType, int length,
@@ -282,7 +282,7 @@ public class VectorSupport {
         V apply(V v1, V v2, V v3);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <VM>
     VM ternaryOp(int oprId, Class<? extends VM> vmClass, Class<?> elementType, int length,
@@ -300,7 +300,7 @@ public class VectorSupport {
         V load(C container, int index, S s);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <C, VM, E, S extends VectorSpecies<E>>
     VM load(Class<? extends VM> vmClass, Class<E> E, int length,
@@ -317,7 +317,7 @@ public class VectorSupport {
         V loadWithMap(C container, int index, int[] indexMap, int indexM, S s);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <C, V extends Vector<?>, W extends Vector<Integer>, E, S extends VectorSpecies<E>>
     V loadWithMap(Class<?> vectorClass, Class<E> E, int length, Class<?> vectorIndexClass,
@@ -335,7 +335,7 @@ public class VectorSupport {
         void store(C container, int index, V v);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <C, V extends Vector<?>>
     void store(Class<?> vectorClass, Class<?> elementType, int length,
@@ -353,7 +353,7 @@ public class VectorSupport {
         void storeWithMap(C container, int index, V v, int[] indexMap, int indexM);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <C, V extends Vector<?>, W extends Vector<Integer>>
     void storeWithMap(Class<?> vectorClass, Class<?> elementType, int length, Class<?> vectorIndexClass,
@@ -367,7 +367,7 @@ public class VectorSupport {
 
     /* ============================================================================ */
 
-    @IntrinsicCandidate
+    
     public static
     <VM>
     boolean test(int cond, Class<?> vmClass, Class<?> elementType, int length,
@@ -383,7 +383,7 @@ public class VectorSupport {
         M apply(int cond, V v1, V v2);
     }
 
-    @IntrinsicCandidate
+    
     public static <V extends Vector<E>,
                    M extends VectorMask<E>,
                    E>
@@ -402,7 +402,7 @@ public class VectorSupport {
         V apply(V v1, Sh shuffle);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<E>,
             Sh extends VectorShuffle<E>,
@@ -422,7 +422,7 @@ public class VectorSupport {
         V apply(V v1, V v2, M mask);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<E>,
      M extends VectorMask<E>,
@@ -440,7 +440,7 @@ public class VectorSupport {
         V apply(V v, int n);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <V extends Vector<?>>
     V broadcastInt(int opr, Class<? extends V> vectorClass, Class<?> elementType, int length,
@@ -460,7 +460,7 @@ public class VectorSupport {
     // REGISTER_ENDIAN, which is currently ByteOrder.LITTLE_ENDIAN.
     // See javadoc for REGISTER_ENDIAN.
 
-    @IntrinsicCandidate
+    
     public static <VOUT extends VectorPayload,
                     VIN extends VectorPayload,
                       S extends VectorSpecies<?>>
@@ -475,7 +475,7 @@ public class VectorSupport {
 
     /* ============================================================================ */
 
-    @IntrinsicCandidate
+    
     public static <V> V maybeRebox(V v) {
         // The fence is added here to avoid memory aliasing problems in C2 between scalar & vector accesses.
         // TODO: move the fence generation into C2. Generate only when reboxing is taking place.
@@ -488,7 +488,7 @@ public class VectorSupport {
         int apply(M m);
     }
 
-    @IntrinsicCandidate
+    
     public static
     <E, M>
     int maskReductionCoerced(int oper, Class<? extends M> maskClass, Class<?> elemClass, int length, M m,

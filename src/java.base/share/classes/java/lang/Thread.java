@@ -257,7 +257,7 @@ public class Thread implements Runnable {
      *
      * @return  the currently executing thread.
      */
-    @IntrinsicCandidate
+    
     public static native Thread currentThread();
 
     /**
@@ -373,7 +373,7 @@ public class Thread implements Runnable {
      *
      * @since 9
      */
-    @IntrinsicCandidate
+    
     public static void onSpinWait() {}
 
     /**

@@ -69,7 +69,7 @@ public class PhantomReference<T> extends Reference<T> {
      * do reference processing concurrently.
      */
     @Override
-    @IntrinsicCandidate
+    
     native final boolean refersTo0(Object o);
 
     /**

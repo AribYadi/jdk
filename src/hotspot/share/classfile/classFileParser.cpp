@@ -5134,22 +5134,22 @@ static void check_methods_for_intrinsics(const InstanceKlass* ik,
 
       if (CheckIntrinsics) {
         // Check if an intrinsic is defined for method 'method',
-        // but the method is not annotated with @IntrinsicCandidate.
+        // but the method is not annotated with .
         if (method->intrinsic_id() != vmIntrinsics::_none &&
             !method->intrinsic_candidate()) {
               tty->print("Compiler intrinsic is defined for method [%s], "
-              "but the method is not annotated with @IntrinsicCandidate.%s",
+              "but the method is not annotated with .%s",
               method->name_and_sig_as_C_string(),
               NOT_DEBUG(" Method will not be inlined.") DEBUG_ONLY(" Exiting.")
             );
           tty->cr();
           DEBUG_ONLY(vm_exit(1));
         }
-        // Check is the method 'method' is annotated with @IntrinsicCandidate,
+        // Check is the method 'method' is annotated with ,
         // but there is no intrinsic available for it.
         if (method->intrinsic_candidate() &&
           method->intrinsic_id() == vmIntrinsics::_none) {
-            tty->print("Method [%s] is annotated with @IntrinsicCandidate, "
+            tty->print("Method [%s] is annotated with , "
               "but no compiler intrinsic is defined for the method.%s",
               method->name_and_sig_as_C_string(),
               NOT_DEBUG("") DEBUG_ONLY(" Exiting.")

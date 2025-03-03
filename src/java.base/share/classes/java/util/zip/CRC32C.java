@@ -211,7 +211,7 @@ public final class CRC32C implements Checksum {
     /**
      * Updates the CRC-32C checksum with the specified array of bytes.
      */
-    @IntrinsicCandidate
+    
     private static int updateBytes(int crc, byte[] b, int off, int end) {
 
         // Do only byte reads for arrays so short they can't be aligned
@@ -286,7 +286,7 @@ public final class CRC32C implements Checksum {
     /**
      * Updates the CRC-32C checksum reading from the specified address.
      */
-    @IntrinsicCandidate
+    
     private static int updateDirectByteBuffer(int crc, long address,
                                               int off, int end) {
 

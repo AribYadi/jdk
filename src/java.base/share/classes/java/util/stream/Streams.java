@@ -91,7 +91,7 @@ final class Streams {
         }
 
         @Override
-        @IntrinsicCandidate
+        
         public void forEachRemaining(IntConsumer consumer) {
             Objects.requireNonNull(consumer);
 

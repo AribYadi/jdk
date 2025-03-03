@@ -97,7 +97,7 @@ public final class StringBuilder
      * Constructs a string builder with no characters in it and an
      * initial capacity of 16 characters.
      */
-    @IntrinsicCandidate
+    
     public StringBuilder() {
         super(16);
     }
@@ -110,7 +110,7 @@ public final class StringBuilder
      * @throws     NegativeArraySizeException  if the {@code capacity}
      *               argument is less than {@code 0}.
      */
-    @IntrinsicCandidate
+    
     public StringBuilder(int capacity) {
         super(capacity);
     }
@@ -122,7 +122,7 @@ public final class StringBuilder
      *
      * @param   str   the initial contents of the buffer.
      */
-    @IntrinsicCandidate
+    
     public StringBuilder(String str) {
         super(str);
     }
@@ -170,7 +170,7 @@ public final class StringBuilder
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public StringBuilder append(String str) {
         super.append(str);
         return this;
@@ -237,14 +237,14 @@ public final class StringBuilder
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public StringBuilder append(char c) {
         super.append(c);
         return this;
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public StringBuilder append(int i) {
         super.append(i);
         return this;
@@ -443,7 +443,7 @@ public final class StringBuilder
     }
 
     @Override
-    @IntrinsicCandidate
+    
     public String toString() {
         // Create a copy, don't share the array
         return isLatin1() ? StringLatin1.newString(value, 0, count)

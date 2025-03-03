@@ -162,7 +162,7 @@ public final class MD5 extends DigestBase {
     // that operates directly on the array 'buf' (starting from
     // offset 'ofs') and not on array 'x', therefore 'buf' and 'ofs'
     // must be passed as parameter to the method.
-    @IntrinsicCandidate
+    
     void implCompress0(byte[] buf, int ofs) {
         int a = state[0];
         int b = state[1];

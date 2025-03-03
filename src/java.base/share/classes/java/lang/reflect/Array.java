@@ -122,7 +122,7 @@ class Array {
      * @throws    IllegalArgumentException if the object argument is not
      * an array
      */
-    @IntrinsicCandidate
+    
     public static native int getLength(Object array)
         throws IllegalArgumentException;
 
@@ -481,7 +481,7 @@ class Array {
      * Private
      */
 
-    @IntrinsicCandidate
+    
     private static native Object newArray(Class<?> componentType, int length)
         throws NegativeArraySizeException;
 

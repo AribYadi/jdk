@@ -503,7 +503,7 @@ public final class System {
      *          the current time and midnight, January 1, 1970 UTC.
      * @see     java.util.Date
      */
-    @IntrinsicCandidate
+    
     public static native long currentTimeMillis();
 
     /**
@@ -547,7 +547,7 @@ public final class System {
      *         high-resolution time source, in nanoseconds
      * @since 1.5
      */
-    @IntrinsicCandidate
+    
     public static native long nanoTime();
 
     /**
@@ -642,7 +642,7 @@ public final class System {
      * @throws     NullPointerException if either {@code src} or
      *             {@code dest} is {@code null}.
      */
-    @IntrinsicCandidate
+    
     public static native void arraycopy(Object src,  int  srcPos,
                                         Object dest, int destPos,
                                         int length);
@@ -660,7 +660,7 @@ public final class System {
      * @see Object#hashCode
      * @see java.util.Objects#hashCode(Object)
      */
-    @IntrinsicCandidate
+    
     public static native int identityHashCode(Object x);
 
     /**

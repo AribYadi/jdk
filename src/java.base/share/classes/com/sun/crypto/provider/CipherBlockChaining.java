@@ -153,7 +153,7 @@ class CipherBlockChaining extends FeedbackCipher  {
                            cipher, cipherOffset);
     }
 
-    @IntrinsicCandidate
+    
     private int implEncrypt(byte[] plain, int plainOffset, int plainLen,
                             byte[] cipher, int cipherOffset)
     {
@@ -203,7 +203,7 @@ class CipherBlockChaining extends FeedbackCipher  {
         return implDecrypt(cipher, cipherOffset, cipherLen, plain, plainOffset);
     }
 
-    @IntrinsicCandidate
+    
     private int implDecrypt(byte[] cipher, int cipherOffset, int cipherLen,
                             byte[] plain, int plainOffset)
     {

@@ -31,30 +31,30 @@ import jdk.internal.vm.annotation.IntrinsicCandidate;
  */
 public class Object {
 
-    @IntrinsicCandidate
+    
     public Object() {}
 
-    @IntrinsicCandidate
+    
     public final native Class<?> getClass();
 
-    @IntrinsicCandidate
+    
     public native int hashCode();
 
     public boolean equals(Object obj) {
         return (this == obj);
     }
 
-    @IntrinsicCandidate
+    
     protected native Object clone() throws CloneNotSupportedException;
 
     public String toString() {
         return getClass().getName() + "@" + Integer.toHexString(hashCode());
     }
 
-    @IntrinsicCandidate
+    
     public final native void notify();
 
-    @IntrinsicCandidate
+    
     public final native void notifyAll();
 
     public final native void wait(long timeout) throws InterruptedException;

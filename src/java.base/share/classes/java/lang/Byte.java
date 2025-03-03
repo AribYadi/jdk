@@ -141,7 +141,7 @@ public final class Byte extends Number implements Comparable<Byte>, Constable {
      * @return a {@code Byte} instance representing {@code b}.
      * @since  1.5
      */
-    @IntrinsicCandidate
+    
     public static Byte valueOf(byte b) {
         final int offset = 128;
         return ByteCache.cache[(int)b + offset];
@@ -376,7 +376,7 @@ public final class Byte extends Number implements Comparable<Byte>, Constable {
      * Returns the value of this {@code Byte} as a
      * {@code byte}.
      */
-    @IntrinsicCandidate
+    
     public byte byteValue() {
         return value;
     }

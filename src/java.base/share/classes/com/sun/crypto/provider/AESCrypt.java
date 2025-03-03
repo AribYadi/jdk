@@ -359,7 +359,7 @@ final class AESCrypt extends SymmetricCipher implements AESConstants
     }
 
     // Encryption operation. Possibly replaced with a compiler intrinsic.
-    @IntrinsicCandidate
+    
     private void implEncryptBlock(byte[] in, int inOffset,
                                   byte[] out, int outOffset)
     {
@@ -438,7 +438,7 @@ final class AESCrypt extends SymmetricCipher implements AESConstants
     }
 
     // Decrypt operation. Possibly replaced with a compiler intrinsic.
-    @IntrinsicCandidate
+    
     private void implDecryptBlock(byte[] in, int inOffset,
                                   byte[] out, int outOffset)
     {

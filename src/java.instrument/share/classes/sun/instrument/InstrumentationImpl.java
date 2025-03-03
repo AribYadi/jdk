@@ -394,7 +394,7 @@ public class InstrumentationImpl implements Instrumentation {
     private native Class[]
     getInitiatedClasses0(long nativeAgent, ClassLoader loader);
 
-    @IntrinsicCandidate
+    
     private native long
     getObjectSize0(long nativeAgent, Object objectToSize);
 

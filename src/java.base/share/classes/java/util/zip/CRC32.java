@@ -131,7 +131,7 @@ public class CRC32 implements Checksum {
         return (long)crc & 0xffffffffL;
     }
 
-    @IntrinsicCandidate
+    
     private static native int update(int crc, int b);
 
     private static int updateBytes(int crc, byte[] b, int off, int len) {
@@ -139,7 +139,7 @@ public class CRC32 implements Checksum {
         return updateBytes0(crc, b, off, len);
     }
 
-    @IntrinsicCandidate
+    
     private static native int updateBytes0(int crc, byte[] b, int off, int len);
 
     private static void updateBytesCheck(byte[] b, int off, int len) {
@@ -165,7 +165,7 @@ public class CRC32 implements Checksum {
         return updateByteBuffer0(alder, addr, off, len);
     }
 
-    @IntrinsicCandidate
+    
     private static native int updateByteBuffer0(int alder, long addr,
                                                 int off, int len);
 

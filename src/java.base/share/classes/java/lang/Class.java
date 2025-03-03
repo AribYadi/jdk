@@ -682,7 +682,7 @@ public final class Class<T> implements java.io.Serializable,
      *
      * @since 1.1
      */
-    @IntrinsicCandidate
+    
     public native boolean isInstance(Object obj);
 
 
@@ -711,7 +711,7 @@ public final class Class<T> implements java.io.Serializable,
      *            null.
      * @since     1.1
      */
-    @IntrinsicCandidate
+    
     public native boolean isAssignableFrom(Class<?> cls);
 
 
@@ -722,7 +722,7 @@ public final class Class<T> implements java.io.Serializable,
      * @return  {@code true} if this {@code Class} object represents an interface;
      *          {@code false} otherwise.
      */
-    @IntrinsicCandidate
+    
     public native boolean isInterface();
 
 
@@ -733,7 +733,7 @@ public final class Class<T> implements java.io.Serializable,
      *          {@code false} otherwise.
      * @since   1.1
      */
-    @IntrinsicCandidate
+    
     public native boolean isArray();
 
 
@@ -765,7 +765,7 @@ public final class Class<T> implements java.io.Serializable,
      * @see     java.lang.Void#TYPE
      * @since 1.1
      */
-    @IntrinsicCandidate
+    
     public native boolean isPrimitive();
 
     /**
@@ -978,7 +978,7 @@ public final class Class<T> implements java.io.Serializable,
      *
      * @return the direct superclass of the class represented by this {@code Class} object
      */
-    @IntrinsicCandidate
+    
     public native Class<? super T> getSuperclass();
 
 
@@ -1280,7 +1280,7 @@ public final class Class<T> implements java.io.Serializable,
      * @jls 8.1.1 Class Modifiers
      * @jls 9.1.1. Interface Modifiers
      */
-    @IntrinsicCandidate
+    
     public native int getModifiers();
 
 
@@ -3883,7 +3883,7 @@ public final class Class<T> implements java.io.Serializable,
      * @since 1.5
      */
     @SuppressWarnings("unchecked")
-    @IntrinsicCandidate
+    
     public T cast(Object obj) {
         if (obj != null && !isInstance(obj))
             throw new ClassCastException(cannotCastMsg(obj));
@@ -4466,7 +4466,7 @@ public final class Class<T> implements java.io.Serializable,
      * @since 15
      * @see MethodHandles.Lookup#defineHiddenClass
      */
-    @IntrinsicCandidate
+    
     public native boolean isHidden();
 
     /**

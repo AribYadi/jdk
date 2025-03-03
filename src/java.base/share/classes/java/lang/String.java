@@ -255,7 +255,7 @@ public final class String
      * @param  original
      *         A {@code String}
      */
-    @IntrinsicCandidate
+    
     public String(String original) {
         this.value = original.value;
         this.coder = original.coder;

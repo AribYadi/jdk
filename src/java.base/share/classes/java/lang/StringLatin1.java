@@ -90,7 +90,7 @@ final class StringLatin1 {
         System.arraycopy(value, srcBegin, dst, dstBegin, srcEnd - srcBegin);
     }
 
-    @IntrinsicCandidate
+    
     public static boolean equals(byte[] value, byte[] other) {
         if (value.length == other.length) {
             for (int i = 0; i < value.length; i++) {
@@ -103,7 +103,7 @@ final class StringLatin1 {
         return false;
     }
 
-    @IntrinsicCandidate
+    
     public static int compareTo(byte[] value, byte[] other) {
         int len1 = value.length;
         int len2 = other.length;
@@ -120,7 +120,7 @@ final class StringLatin1 {
         return len1 - len2;
     }
 
-    @IntrinsicCandidate
+    
     public static int compareToUTF16(byte[] value, byte[] other) {
         int len1 = length(value);
         int len2 = StringUTF16.length(other);
@@ -772,7 +772,7 @@ final class StringLatin1 {
     }
 
     // inflatedCopy byte[] -> char[]
-    @IntrinsicCandidate
+    
     public static void inflate(byte[] src, int srcOff, char[] dst, int dstOff, int len) {
         for (int i = 0; i < len; i++) {
             dst[dstOff++] = (char)(src[srcOff++] & 0xff);
@@ -780,7 +780,7 @@ final class StringLatin1 {
     }
 
     // inflatedCopy byte[] -> byte[]
-    @IntrinsicCandidate
+    
     public static void inflate(byte[] src, int srcOff, byte[] dst, int dstOff, int len) {
         StringUTF16.inflate(src, srcOff, dst, dstOff, len);
     }

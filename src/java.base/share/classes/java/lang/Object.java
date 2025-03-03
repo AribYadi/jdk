@@ -40,7 +40,7 @@ public class Object {
     /**
      * Constructs a new object.
      */
-    @IntrinsicCandidate
+    
     public Object() {}
 
     /**
@@ -62,7 +62,7 @@ public class Object {
      *         class of this object.
      * @jls 15.8.2 Class Literals
      */
-    @IntrinsicCandidate
+    
     public final native Class<?> getClass();
 
     /**
@@ -98,7 +98,7 @@ public class Object {
      * @see     java.lang.Object#equals(java.lang.Object)
      * @see     java.lang.System#identityHashCode
      */
-    @IntrinsicCandidate
+    
     public native int hashCode();
 
     /**
@@ -224,7 +224,7 @@ public class Object {
      *               be cloned.
      * @see java.lang.Cloneable
      */
-    @IntrinsicCandidate
+    
     protected native Object clone() throws CloneNotSupportedException;
 
     /**
@@ -288,7 +288,7 @@ public class Object {
      * @see        java.lang.Object#notifyAll()
      * @see        java.lang.Object#wait()
      */
-    @IntrinsicCandidate
+    
     public final native void notify();
 
     /**
@@ -313,7 +313,7 @@ public class Object {
      * @see        java.lang.Object#notify()
      * @see        java.lang.Object#wait()
      */
-    @IntrinsicCandidate
+    
     public final native void notifyAll();
 
     /**

@@ -8588,7 +8588,7 @@ class Character implements java.io.Serializable, Comparable<Character>, Constabl
      * @return a {@code Character} instance representing {@code c}.
      * @since  1.5
      */
-    @IntrinsicCandidate
+    
     public static Character valueOf(char c) {
         if (c <= 127) { // must cache
             return CharacterCache.cache[(int)c];
@@ -8601,7 +8601,7 @@ class Character implements java.io.Serializable, Comparable<Character>, Constabl
      * @return  the primitive {@code char} value represented by
      *          this object.
      */
-    @IntrinsicCandidate
+    
     public char charValue() {
         return value;
     }
@@ -11293,7 +11293,7 @@ class Character implements java.io.Serializable, Comparable<Character>, Constabl
      *     the bytes in the specified {@code char} value.
      * @since 1.5
      */
-    @IntrinsicCandidate
+    
     public static char reverseBytes(char ch) {
         return (char) (((ch & 0xFF00) >> 8) | (ch << 8));
     }

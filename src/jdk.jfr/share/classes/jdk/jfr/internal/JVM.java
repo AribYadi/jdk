@@ -102,7 +102,7 @@ public final class JVM {
      * @return the time, in ticks
      *
      */
-    @IntrinsicCandidate
+    
     public static native long counterTime();
 
     /**
@@ -139,7 +139,7 @@ public final class JVM {
      *
      * @return a unique class identifier
      */
-    @IntrinsicCandidate
+    
     public static native long getClassId(Class<?> clazz);
 
     /**
@@ -446,7 +446,7 @@ public final class JVM {
      *
      * @return thread local EventWriter
      */
-    @IntrinsicCandidate
+    
     public static native Object getEventWriter();
 
     /**

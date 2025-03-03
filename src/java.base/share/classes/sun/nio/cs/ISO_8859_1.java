@@ -151,7 +151,7 @@ public class ISO_8859_1
             return implEncodeISOArray(sa, sp, da, dp, len);
         }
 
-        @IntrinsicCandidate
+        
         private static int implEncodeISOArray(char[] sa, int sp,
                                               byte[] da, int dp, int len)
         {

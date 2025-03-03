@@ -274,7 +274,7 @@ final class GHASH implements Cloneable, GCM {
      * the hotspot signature.  This method and methods called by it, cannot
      * throw exceptions or allocate arrays as it will breaking intrinsics
      */
-    @IntrinsicCandidate
+    
     private static void processBlocks(byte[] data, int inOfs, int blocks,
         long[] st, long[] subH) {
         int offset = inOfs;

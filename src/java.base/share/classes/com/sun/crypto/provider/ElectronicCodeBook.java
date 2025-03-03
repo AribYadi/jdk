@@ -97,7 +97,7 @@ final class ElectronicCodeBook extends FeedbackCipher {
         embeddedCipher.init(decrypting, algorithm, key);
     }
 
-    @IntrinsicCandidate
+    
     private int implECBEncrypt(byte [] in, int inOff, int len, byte[] out, int outOff) {
         for (int i = len; i >= blockSize; i -= blockSize) {
             embeddedCipher.encryptBlock(in, inOff, out, outOff);
@@ -131,7 +131,7 @@ final class ElectronicCodeBook extends FeedbackCipher {
         return implECBEncrypt(in, inOff, len, out, outOff);
     }
 
-    @IntrinsicCandidate
+    
     private int implECBDecrypt(byte [] in, int inOff, int len, byte[] out, int outOff) {
         for (int i = len; i >= blockSize; i -= blockSize) {
             embeddedCipher.decryptBlock(in, inOff, out, outOff);
